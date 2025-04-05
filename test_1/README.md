@@ -14,3 +14,14 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+---
+
+flutter build web
+git checkout gh-pages
+rm -rf docs
+mkdir docs
+cp -r build/web/\* docs/
+git add docs
+git commit -m "update"
+git push origin gh-pages
