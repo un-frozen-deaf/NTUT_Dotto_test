@@ -24,6 +24,7 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
   final Map<String, Color> roomColors = {
     'room203': Colors.grey,
     'room204': Colors.grey,
+    'room205': Colors.grey,
   };
 
   Offset? tapPosition;
@@ -55,8 +56,8 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
             children: [
               Image.asset(
                 'assets/map-2F.jpeg',
-                width: 400,
-                height: 600,
+                width: 900,
+                height: 1350,
                 fit: BoxFit.contain,
               ),
 
@@ -77,8 +78,8 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
 
               // 部屋1
               Positioned(
-                left: 100,
-                top: 150,
+                left: 205,
+                top: 430,
                 child: GestureDetector(
                   onTap: () => _onRoomTapped('room203'),
                   child: Container(
@@ -92,18 +93,34 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
 
               // 部屋2
               Positioned(
-                left: 200,
-                top: 300,
+                left: 270,
+                top: 430,
                 child: GestureDetector(
                   onTap: () => _onRoomTapped('room204'),
                   child: Container(
-                    width: 60,
+                    width: 45,
                     height: 60,
                     color: roomColors['room204']!.withOpacity(0.6),
                     child: const Center(child: Text('204')),
                   ),
                 ),
               ),
+
+              // 部屋3
+              Positioned(
+                left: 320,
+                top: 430,
+                child: GestureDetector(
+                  onTap: () => _onRoomTapped('room205'),
+                  child: Container(
+                    width: 45,
+                    height: 60,
+                    color: roomColors['room205']!.withOpacity(0.6),
+                    child: const Center(child: Text('205')),
+                  ),
+                ),
+              ),
+
             ],
           ),
         ),
