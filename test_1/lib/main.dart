@@ -38,16 +38,13 @@ class _SvgMapScreenState extends State<SvgMapScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('SVGマップ')),
+      appBar: AppBar(title: const Text('校舎棟2Fマップ')),
       body: Center(
-        child: SvgPicture.asset(
-          'assets/usa.svg',
-          width: 400,
-          height: 600,
-          semanticsLabel: 'USA MAP',
-          allowDrawingOutsideViewBox: true,
-          clipBehavior: Clip.none,
-          placeholderBuilder: (context) => const CircularProgressIndicator(),
+        child:Image.asset(
+          'assets/map-2F.jpeg',
+          width: 600,
+          height: 900,
+          fit: BoxFit.contain,
         ),
       ),
     );
