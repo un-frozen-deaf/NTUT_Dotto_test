@@ -22,11 +22,10 @@ class JpegMapScreen extends StatefulWidget {
 
 class _JpegMapScreenState extends State<JpegMapScreen> {
   String _currentFloor = '2F';
-  String _currentRoomDescription = ''; // 追加: 説明文を保持する変数
+  String _currentRoomDescription = '';
   Offset? tapPosition;
 
   final Map<String, Color> roomColors = {
-    // 2F
     '工房': Colors.grey,
     'room201': Colors.grey,
     'room202': Colors.grey,
@@ -44,26 +43,19 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
     'room214': Colors.grey,
     'room215': Colors.grey,
     'room216': Colors.grey,
-    // 3F（仮）
-    'room301': Colors.grey,
-    'room302': Colors.grey,
+    'room101': Colors.grey,
+    'room102': Colors.grey,
   };
 
   void _onRoomTapped(String roomId) {
     setState(() {
-      // すべての部屋を灰色に戻す
       roomColors.updateAll((key, value) => Colors.grey);
-
-      // タップした部屋だけ赤に設定
       roomColors[roomId] = Colors.red;
-
-      // 部屋タップ時に説明文を設定
       _currentRoomDescription = _getRoomDescription(roomId);
     });
   }
 
   String _getRoomDescription(String roomId) {
-    // 部屋ごとの説明文を定義
     switch (roomId) {
       case '工房':
         return '工房: ものづくりの空間です。';
@@ -126,31 +118,37 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
                 setState(() {
                   _currentFloor = value;
                   tapPosition = null;
-                  _currentRoomDescription = ''; // フロア変更時に説明文をリセット
+                  _currentRoomDescription = '';
                 });
               }
             },
             items: const [
+              DropdownMenuItem(value: '1F', child: Text('1F')),
               DropdownMenuItem(value: '2F', child: Text('2F')),
-              DropdownMenuItem(value: '3F', child: Text('3F')),
             ],
           ),
         ],
       ),
-      body: Center(
-        child: GestureDetector(
-          onTapDown: _onImageTapped,
+      body: GestureDetector(
+        onTapDown: _onImageTapped,
+        child: InteractiveViewer(
+          panEnabled: true,
+          scaleEnabled: true,
+          minScale: 1.0,
+          maxScale: 4.0,
           child: Stack(
             children: [
+              // 画像
               Image.asset(
                 _currentFloor == '2F'
                     ? 'assets/map-2F.png'
-                    : 'assets/map-3F.png',
+                    : 'assets/map-1F.png',
                 width: 792,
                 height: 1188,
                 fit: BoxFit.contain,
               ),
 
+              // タップ位置表示
               if (tapPosition != null)
                 Positioned(
                   left: tapPosition!.dx,
@@ -165,8 +163,8 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
                   ),
                 ),
 
+              // 部屋
               if (_currentFloor == '2F') ...[
-                // === 2Fの部屋配置 ===
                 _buildRoom('工房', 43, 227, 270, 87, '工房'),
                 _buildRoom('room201', 45, 626, 87, 87, '201'),
                 _buildRoom('room202', 45, 494, 87, 130, '202'),
@@ -185,12 +183,11 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
                 _buildRoom('room215', 648, 658, 98, 85, '215'),
                 _buildRoom('room216', 560, 456, 52, 115, '216'),
               ] else ...[
-                // === 3Fの仮部屋配置 ===
-                _buildRoom('room301', 100, 200, 100, 100, '301'),
-                _buildRoom('room302', 250, 300, 100, 100, '302'),
+                _buildRoom('room101', 100, 200, 100, 100, '101'),
+                _buildRoom('room102', 250, 300, 100, 100, '102'),
               ],
 
-              // 説明文を表示するためのPositionedウィジェット
+              // 説明文
               if (_currentRoomDescription.isNotEmpty)
                 Positioned(
                   left: 20,
