@@ -23,6 +23,7 @@ class JpegMapScreen extends StatefulWidget {
 class _JpegMapScreenState extends State<JpegMapScreen> {
   String _currentFloor = '2F';
   String _currentRoomDescription = ''; // 追加: 説明文を保持する変数
+  Offset? tapPosition;
 
   final Map<String, Color> roomColors = {
     // 2F
@@ -47,8 +48,6 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
     'room301': Colors.grey,
     'room302': Colors.grey,
   };
-
-  Offset? tapPosition;
 
   void _onRoomTapped(String roomId) {
     setState(() {
@@ -99,7 +98,6 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
       default:
         return '説明文がありません';
     }
-
   }
 
   void _onImageTapped(TapDownDetails details) {
@@ -186,23 +184,26 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
                 // === 3Fの仮部屋配置 ===
                 _buildRoom('room301', 100, 200, 100, 100, '301'),
                 _buildRoom('room302', 250, 300, 100, 100, '302'),
-              ]
+              ],
+
+              // 説明文を表示するためのPositionedウィジェット
+              if (_currentRoomDescription.isNotEmpty)
+                Positioned(
+                  left: 20,
+                  bottom: 20,
+                  child: Container(
+                    color: Colors.black.withOpacity(0.7),
+                    padding: const EdgeInsets.all(10),
+                    child: Text(
+                      _currentRoomDescription,
+                      style: const TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                  ),
+                ),
             ],
           ),
         ),
       ),
-      // 部屋の説明文を表示するためのウィジェット
-      bottomNavigationBar: _currentRoomDescription.isNotEmpty
-          ? BottomAppBar(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            _currentRoomDescription,
-            style: const TextStyle(fontSize: 16),
-          ),
-        ),
-      )
-          : null,
     );
   }
 
