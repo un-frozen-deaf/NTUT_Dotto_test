@@ -51,8 +51,12 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
 
   void _onRoomTapped(String roomId) {
     setState(() {
-      roomColors[roomId] =
-      roomColors[roomId] == Colors.grey ? Colors.red : Colors.grey;
+      // すべての部屋を灰色に戻す
+      roomColors.updateAll((key, value) => Colors.grey);
+
+      // タップした部屋だけ赤に設定
+      roomColors[roomId] = Colors.red;
+
       // 部屋タップ時に説明文を設定
       _currentRoomDescription = _getRoomDescription(roomId);
     });
