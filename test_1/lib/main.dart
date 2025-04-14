@@ -22,6 +22,7 @@ class JpegMapScreen extends StatefulWidget {
 
 class _JpegMapScreenState extends State<JpegMapScreen> {
   String _currentFloor = '2F';
+  String _currentRoomDescription = ''; // 追加: 説明文を保持する変数
 
   final Map<String, Color> roomColors = {
     // 2F
@@ -53,7 +54,52 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
     setState(() {
       roomColors[roomId] =
       roomColors[roomId] == Colors.grey ? Colors.red : Colors.grey;
+      // 部屋タップ時に説明文を設定
+      _currentRoomDescription = _getRoomDescription(roomId);
     });
+  }
+
+  String _getRoomDescription(String roomId) {
+    // 部屋ごとの説明文を定義
+    switch (roomId) {
+      case '工房':
+        return '工房: ものづくりの空間です。';
+      case 'room201':
+        return 'room201: 会議室です。';
+      case 'room202':
+        return 'room202: 学習室です。';
+      case 'room203':
+        return 'room203: 休憩室です。';
+      case 'room204':
+        return 'room204: 調理室です。';
+      case 'room205':
+        return 'room205: パソコン室です。';
+      case 'room206':
+        return 'room206: ラボです。';
+      case 'room207':
+        return 'room207: プレゼンテーションルームです。';
+      case 'room208':
+        return 'room208: 研究室です。';
+      case 'room209':
+        return 'room209: 映像編集室です。';
+      case 'room210':
+        return 'room210: 図書室です。';
+      case 'room211':
+        return 'room211: 音楽室です。';
+      case 'room212':
+        return 'room212: 体育館です。';
+      case 'room213':
+        return 'room213: 美術室です。';
+      case 'room214':
+        return 'room214: 講義室です。';
+      case 'room215':
+        return 'room215: 休憩室です。';
+      case 'room216':
+        return 'room216: セミナー室です。';
+      default:
+        return '説明文がありません';
+    }
+
   }
 
   void _onImageTapped(TapDownDetails details) {
@@ -78,6 +124,7 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
                 setState(() {
                   _currentFloor = value;
                   tapPosition = null;
+                  _currentRoomDescription = ''; // フロア変更時に説明文をリセット
                 });
               }
             },
@@ -111,8 +158,7 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
                     padding: const EdgeInsets.all(4),
                     child: Text(
                       'x: ${tapPosition!.dx.toStringAsFixed(0)}, y: ${tapPosition!.dy.toStringAsFixed(0)}',
-                      style:
-                      const TextStyle(color: Colors.white, fontSize: 12),
+                      style: const TextStyle(color: Colors.white, fontSize: 12),
                     ),
                   ),
                 ),
@@ -145,6 +191,18 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
           ),
         ),
       ),
+      // 部屋の説明文を表示するためのウィジェット
+      bottomNavigationBar: _currentRoomDescription.isNotEmpty
+          ? BottomAppBar(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            _currentRoomDescription,
+            style: const TextStyle(fontSize: 16),
+          ),
+        ),
+      )
+          : null,
     );
   }
 
