@@ -21,7 +21,10 @@ class JpegMapScreen extends StatefulWidget {
 }
 
 class _JpegMapScreenState extends State<JpegMapScreen> {
+  String _currentFloor = '2F';
+
   final Map<String, Color> roomColors = {
+    // 2F
     '工房': Colors.grey,
     'room201': Colors.grey,
     'room202': Colors.grey,
@@ -39,6 +42,9 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
     'room214': Colors.grey,
     'room215': Colors.grey,
     'room216': Colors.grey,
+    // 3F（仮）
+    'room301': Colors.grey,
+    'room302': Colors.grey,
   };
 
   Offset? tapPosition;
@@ -62,20 +68,40 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('JPEGマップ')),
+      appBar: AppBar(
+        title: const Text('校舎棟マップ'),
+        actions: [
+          DropdownButton<String>(
+            value: _currentFloor,
+            onChanged: (value) {
+              if (value != null) {
+                setState(() {
+                  _currentFloor = value;
+                  tapPosition = null;
+                });
+              }
+            },
+            items: const [
+              DropdownMenuItem(value: '2F', child: Text('2F')),
+              DropdownMenuItem(value: '3F', child: Text('3F')),
+            ],
+          ),
+        ],
+      ),
       body: Center(
         child: GestureDetector(
           onTapDown: _onImageTapped,
           child: Stack(
             children: [
               Image.asset(
-                'assets/map-2F.jpeg',
-                width: 900,
-                height: 1350,
+                _currentFloor == '2F'
+                    ? 'assets/map-2F.png'
+                    : 'assets/map-3F.png',
+                width: 792,
+                height: 1188,
                 fit: BoxFit.contain,
               ),
 
-              // 座標表示
               if (tapPosition != null)
                 Positioned(
                   left: tapPosition!.dx,
@@ -85,251 +111,55 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
                     padding: const EdgeInsets.all(4),
                     child: Text(
                       'x: ${tapPosition!.dx.toStringAsFixed(0)}, y: ${tapPosition!.dy.toStringAsFixed(0)}',
-                      style: const TextStyle(color: Colors.white, fontSize: 12),
+                      style:
+                      const TextStyle(color: Colors.white, fontSize: 12),
                     ),
                   ),
                 ),
 
-              Positioned(
-                left: 85,
-                top: 163,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('工房'),
-                  child: Container(
-                    width: 270,
-                    height: 87,
-                    color: roomColors['工房']!.withOpacity(0.6),
-                    child: const Center(child: Text('工房')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 87,
-                top: 562,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room201'),
-                  child: Container(
-                    width: 87,
-                    height: 87,
-                    color: roomColors['room201']!.withOpacity(0.6),
-                    child: const Center(child: Text('201')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 87,
-                top: 430,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room202'),
-                  child: Container(
-                    width: 87,
-                    height: 130,
-                    color: roomColors['room202']!.withOpacity(0.6),
-                    child: const Center(child: Text('202')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 205,
-                top: 430,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room203'),
-                  child: Container(
-                    width: 55,
-                    height: 55,
-                    color: roomColors['room203']!.withOpacity(0.6),
-                    child: const Center(child: Text('203')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 262,
-                top: 430,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room204'),
-                  child: Container(
-                    width: 40,
-                    height: 55,
-                    color: roomColors['room204']!.withOpacity(0.6),
-                    child: const Center(child: Text('204')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 304,
-                top: 430,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room205'),
-                  child: Container(
-                    width: 40,
-                    height: 55,
-                    color: roomColors['room205']!.withOpacity(0.6),
-                    child: const Center(child: Text('205')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 346,
-                top: 405,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room206'),
-                  child: Container(
-                    width: 40,
-                    height: 55,
-                    color: roomColors['room206']!.withOpacity(0.6),
-                    child: const Center(child: Text('206')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 388,
-                top: 380,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room207'),
-                  child: Container(
-                    width: 40,
-                    height: 55,
-                    color: roomColors['room207']!.withOpacity(0.6),
-                    child: const Center(child: Text('207')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 430,
-                top: 355,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room208'),
-                  child: Container(
-                    width: 40,
-                    height: 55,
-                    color: roomColors['room208']!.withOpacity(0.6),
-                    child: const Center(child: Text('208')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 472,
-                top: 330,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room209'),
-                  child: Container(
-                    width: 40,
-                    height: 55,
-                    color: roomColors['room209']!.withOpacity(0.6),
-                    child: const Center(child: Text('209')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 514,
-                top: 305,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room210'),
-                  child: Container(
-                    width: 40,
-                    height: 55,
-                    color: roomColors['room210']!.withOpacity(0.6),
-                    child: const Center(child: Text('210')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 556,
-                top: 280,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room211'),
-                  child: Container(
-                    width: 40,
-                    height: 55,
-                    color: roomColors['room211']!.withOpacity(0.6),
-                    child: const Center(child: Text('211')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 598,
-                top: 280,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room212'),
-                  child: Container(
-                    width: 55,
-                    height: 55,
-                    color: roomColors['room212']!.withOpacity(0.6),
-                    child: const Center(child: Text('212')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 690,
-                top: 290,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room213'),
-                  child: Container(
-                    width: 80,
-                    height: 130,
-                    color: roomColors['room213']!.withOpacity(0.6),
-                    child: const Center(child: Text('213')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 690,
-                top: 422,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room214'),
-                  child: Container(
-                    width: 80,
-                    height: 170,
-                    color: roomColors['room214']!.withOpacity(0.6),
-                    child: const Center(child: Text('214')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 690,
-                top: 594,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room215'),
-                  child: Container(
-                    width: 98,
-                    height: 85,
-                    color: roomColors['room215']!.withOpacity(0.6),
-                    child: const Center(child: Text('215')),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                left: 602,
-                top: 392,
-                child: GestureDetector(
-                  onTap: () => _onRoomTapped('room216'),
-                  child: Container(
-                    width: 52,
-                    height: 115,
-                    color: roomColors['room216']!.withOpacity(0.6),
-                    child: const Center(child: Text('216')),
-                  ),
-                ),
-              ),
-
+              if (_currentFloor == '2F') ...[
+                // === 2Fの部屋配置 ===
+                _buildRoom('工房', 43, 227, 270, 87, '工房'),
+                _buildRoom('room201', 45, 626, 87, 87, '201'),
+                _buildRoom('room202', 45, 494, 87, 130, '202'),
+                _buildRoom('room203', 163, 494, 55, 55, '203'),
+                _buildRoom('room204', 220, 494, 40, 55, '204'),
+                _buildRoom('room205', 262, 494, 40, 55, '205'),
+                _buildRoom('room206', 304, 469, 40, 55, '206'),
+                _buildRoom('room207', 346, 444, 40, 55, '207'),
+                _buildRoom('room208', 388, 419, 40, 55, '208'),
+                _buildRoom('room209', 430, 394, 40, 55, '209'),
+                _buildRoom('room210', 472, 369, 40, 55, '210'),
+                _buildRoom('room211', 514, 344, 40, 55, '211'),
+                _buildRoom('room212', 556, 344, 55, 55, '212'),
+                _buildRoom('room213', 648, 354, 80, 130, '213'),
+                _buildRoom('room214', 648, 486, 80, 170, '214'),
+                _buildRoom('room215', 648, 658, 98, 85, '215'),
+                _buildRoom('room216', 560, 456, 52, 115, '216'),
+              ] else ...[
+                // === 3Fの仮部屋配置 ===
+                _buildRoom('room301', 100, 200, 100, 100, '301'),
+                _buildRoom('room302', 250, 300, 100, 100, '302'),
+              ]
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildRoom(String id, double left, double top, double width,
+      double height, String label) {
+    return Positioned(
+      left: left,
+      top: top,
+      child: GestureDetector(
+        onTap: () => _onRoomTapped(id),
+        child: Container(
+          width: width,
+          height: height,
+          color: roomColors[id]?.withOpacity(0.6) ?? Colors.grey.withOpacity(0.6),
+          child: Center(child: Text(label)),
         ),
       ),
     );
