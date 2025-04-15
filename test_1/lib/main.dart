@@ -246,6 +246,7 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
           scaleEnabled: true,
           minScale: 1.0,
           maxScale: 4.0,
+          constrained: false,
           child: Stack(
             children: [
               // 画像
