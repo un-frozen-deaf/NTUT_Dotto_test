@@ -216,6 +216,7 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -244,7 +245,7 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
         child: InteractiveViewer(
           panEnabled: true,
           scaleEnabled: true,
-          minScale: 1.0,
+          minScale: 0.5,
           maxScale: 4.0,
           constrained: false,
           child: Stack(
@@ -254,8 +255,7 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
                 _currentFloor == '2F'
                     ? 'assets/map-2F-1.png'
                     : 'assets/map-1F.png',
-                width: 792,
-                height: 1188,
+                width: screenSize.width,
                 fit: BoxFit.contain,
               ),
 
@@ -276,26 +276,26 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
 
               // 部屋
               if (_currentFloor == '2F') ...[
-                _buildRoom('工房', 43, 227, 270, 87, '工房'),
-                _buildRoom('room201', 45, 626, 87, 87, '201'),
-                _buildRoom('room202', 45, 494, 87, 130, '202'),
-                _buildRoom('room203', 163, 494, 55, 55, '203'),
-                _buildRoom('room204', 220, 494, 40, 55, '204'),
-                _buildRoom('room205', 262, 494, 40, 55, '205'),
-                _buildRoom('room206', 304, 469, 40, 55, '206'),
-                _buildRoom('room207', 346, 444, 40, 55, '207'),
-                _buildRoom('room208', 388, 419, 40, 55, '208'),
-                _buildRoom('room209', 430, 394, 40, 55, '209'),
-                _buildRoom('room210', 472, 369, 40, 55, '210'),
-                _buildRoom('room211', 514, 344, 40, 55, '211'),
-                _buildRoom('room212', 556, 344, 55, 55, '212'),
-                _buildRoom('room213', 648, 354, 80, 130, '213'),
-                _buildRoom('room214', 648, 486, 80, 170, '214'),
-                _buildRoom('room215', 648, 658, 98, 85, '215'),
-                _buildRoom('room216', 560, 456, 52, 115, '216'),
+                _buildScaledRoom('工房', 43, 227, 270, 87, '工房',screenSize.width / 792),
+                _buildScaledRoom('room201', 45, 626, 87, 87, '201',screenSize.width / 792),
+                _buildScaledRoom('room202', 45, 494, 87, 130, '202',screenSize.width / 792),
+                _buildScaledRoom('room203', 163, 494, 55, 55, '203',screenSize.width / 792),
+                _buildScaledRoom('room204', 220, 494, 40, 55, '204',screenSize.width / 792),
+                _buildScaledRoom('room205', 262, 494, 40, 55, '205',screenSize.width / 792),
+                _buildScaledRoom('room206', 304, 469, 40, 55, '206',screenSize.width / 792),
+                _buildScaledRoom('room207', 346, 444, 40, 55, '207',screenSize.width / 792),
+                _buildScaledRoom('room208', 388, 419, 40, 55, '208',screenSize.width / 792),
+                _buildScaledRoom('room209', 430, 394, 40, 55, '209',screenSize.width / 792),
+                _buildScaledRoom('room210', 472, 369, 40, 55, '210',screenSize.width / 792),
+                _buildScaledRoom('room211', 514, 344, 40, 55, '211',screenSize.width / 792),
+                _buildScaledRoom('room212', 556, 344, 55, 55, '212',screenSize.width / 792),
+                _buildScaledRoom('room213', 648, 354, 80, 130, '213',screenSize.width / 792),
+                _buildScaledRoom('room214', 648, 486, 80, 170, '214',screenSize.width / 792),
+                _buildScaledRoom('room215', 648, 658, 98, 85, '215',screenSize.width / 792),
+                _buildScaledRoom('room216', 560, 456, 52, 115, '216',screenSize.width / 792),
               ] else ...[
-                _buildRoom('room101', 100, 200, 100, 100, '101'),
-                _buildRoom('room102', 250, 300, 100, 100, '102'),
+                _buildScaledRoom('room101', 100, 200, 100, 100, '101',screenSize.width / 792),
+                _buildScaledRoom('room102', 250, 300, 100, 100, '102',screenSize.width / 792),
               ],
 
               // 説明文
@@ -319,20 +319,21 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
     );
   }
 
-  Widget _buildRoom(String id, double left, double top, double width,
-      double height, String label) {
+  Widget _buildScaledRoom(String id, double left, double top, double width,
+      double height, String label, double scale) {
     return Positioned(
-      left: left,
-      top: top,
+      left: left * scale,
+      top: top * scale,
       child: GestureDetector(
         onTap: () => _onRoomTapped(id),
         child: Container(
-          width: width,
-          height: height,
+          width: width * scale,
+          height: height * scale,
           color: roomColors[id]?.withOpacity(0.6) ?? Colors.grey.withOpacity(0.6),
-          child: Center(child: Text(label)),
+          child: Center(child: Text(label, style: TextStyle(fontSize: 12 * scale))),
         ),
       ),
     );
+
   }
 }
