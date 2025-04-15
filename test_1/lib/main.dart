@@ -141,7 +141,7 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
               // 画像
               Image.asset(
                 _currentFloor == '2F'
-                    ? 'assets/map-2F.png'
+                    ? 'assets/map-2F-1.png'
                     : 'assets/map-1F.png',
                 width: 792,
                 height: 1188,
