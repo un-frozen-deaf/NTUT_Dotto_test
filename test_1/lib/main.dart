@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: JpegMapScreen(),
     );
   }
@@ -108,6 +109,7 @@ class _JpegMapScreenState extends State<JpegMapScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('校舎棟マップ'),
         actions: [
