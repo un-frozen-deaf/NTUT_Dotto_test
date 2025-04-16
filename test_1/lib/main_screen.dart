@@ -17,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
   // 表示する画面のリスト
   final List<Widget> _screens = [
     const HomeScreen(),        // ホーム画面
-    const JpegMapScreen(),     // マップ画面（既存）
+    const MapScreen(),     // マップ画面（既存）
     const SubjectInfoScreen(), // 科目情報画面
     const SettingsScreen(),    // 設定画面
   ];

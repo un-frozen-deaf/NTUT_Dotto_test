@@ -60,7 +60,8 @@ flutter:
   assets:
     - assets/map-1F.png
     - assets/map-2F.png
-    - assets/map-2F-1.png
+    - assets/map-3F.png
+    - assets/map-4F.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
