@@ -1,0 +1,85 @@
+{
+  "floors": {
+    "1F": {
+      "mapImage": "assets/map-1F.png",
+      "rooms": [
+        {"id": "room101", "label": "101", "description": "101教室: エントランスホール", "x": 61, "y": 591, "width": 85, "height": 76},
+        {"id": "room102", "label": "102", "description": "102教室: 一般教室", "x": 61, "y": 512, "width": 85, "height": 77},
+        {"id": "room103", "label": "103", "description": "103教室: 図書室", "x": 61, "y": 434, "width": 85, "height": 76},
+        {"id": "room104", "label": "104", "description": "104教室: 大講義室", "x": 250, "y": 510, "width": 60, "height": 156},
+        {"id": "room105", "label": "105", "description": "105教室: 実験室", "x": 175, "y": 434, "width": 57, "height": 60},
+        {"id": "room106", "label": "106", "description": "106教室: 研究室", "x": 234, "y": 425, "width": 39, "height": 69},
+        {"id": "room107", "label": "107", "description": "107教室: 研究室", "x": 275, "y": 400, "width": 39, "height": 60},
+        {"id": "room108", "label": "108", "description": "108教室: 研究室", "x": 316, "y": 378, "width": 38, "height": 60},
+        {"id": "room109", "label": "109", "description": "109教室: 研究室", "x": 356, "y": 359, "width": 38, "height": 60},
+        {"id": "room110", "label": "110", "description": "110教室: 研究室", "x": 396, "y": 335, "width": 38, "height": 60},
+        {"id": "room111", "label": "111", "description": "111教室: 研究室", "x": 435, "y": 314, "width": 38, "height": 60},
+        {"id": "room112", "label": "112", "description": "112教室: 会議室", "x": 558, "y": 275, "width": 40, "height": 53},
+        {"id": "room113", "label": "113", "description": "113教室: 実習室", "x": 640, "y": 275, "width": 83, "height": 75},
+        {"id": "room114", "label": "114", "description": "114教室: 実習室", "x": 640, "y": 352, "width": 83, "height": 75},
+        {"id": "room115", "label": "115", "description": "115教室: 実習室", "x": 640, "y": 429, "width": 83, "height": 75},
+        {"id": "room116", "label": "116", "description": "116教室: 実習室", "x": 640, "y": 506, "width": 85, "height": 75},
+        {"id": "room117", "label": "117", "description": "117教室: カフェテリア", "x": 618, "y": 583, "width": 122, "height": 82},
+        {"id": "room118", "label": "118", "description": "118教室: ラウンジ", "x": 486, "y": 583, "width": 130, "height": 82},
+        {"id": "room119", "label": "119", "description": "119教室: 事務室", "x": 558, "y": 429, "width": 52, "height": 76},
+        {"id": "room120", "label": "120", "description": "120教室: 事務室", "x": 558, "y": 347, "width": 52, "height": 80},
+        {"id": "room121", "label": "121", "description": "121教室: 体育館", "x": 60, "y": 191, "width": 258, "height": 80},
+        {"id": "room122", "label": "122", "description": "122教室: 器具室", "x": 144, "y": 126, "width": 82, "height": 63}
+      ]
+    },
+    "2F": {
+      "mapImage": "assets/map-2F.png",
+      "rooms": [
+        {"id": "workshop", "label": "工房", "description": "工房: ものづくりの空間です。", "x": 18, "y": 105, "width": 283, "height": 96},
+        {"id": "room201", "label": "201", "description": "room201: 会議室です。", "x": 17, "y": 533, "width": 94, "height": 99},
+        {"id": "room202", "label": "202", "description": "room202: 学習室です。", "x": 17, "y": 391, "width": 94, "height": 140},
+        {"id": "room203", "label": "203", "description": "room203: 休憩室です。", "x": 146, "y": 392, "width": 61, "height": 55},
+        {"id": "room204", "label": "204", "description": "204教室: 小林 洋子 教授", "x": 209, "y": 392, "width": 43, "height": 55},
+        {"id": "room205", "label": "205", "description": "205教室: 新井 達也 教授", "x": 254, "y": 392, "width": 43, "height": 55},
+        {"id": "room206", "label": "206", "description": "206教室: 新田 伸也 教授", "x": 299, "y": 357, "width": 43, "height": 55},
+        {"id": "room207", "label": "207", "description": "207教室: 田中 晃 教授", "x": 344, "y": 332, "width": 43, "height": 55},
+        {"id": "room208", "label": "208", "description": "208教室: 中島 幸則 教授", "x": 389, "y": 307, "width": 43, "height": 55},
+        {"id": "room209", "label": "209", "description": "209教室: 神村 幸蔵 教授", "x": 434, "y": 282, "width": 43, "height": 55},
+        {"id": "room210", "label": "210", "description": "210教室: 脇中 起余子 教授", "x": 479, "y": 257, "width": 43, "height": 55},
+        {"id": "room211", "label": "211", "description": "211教室: 大杉 豊 教授", "x": 524, "y": 232, "width": 43, "height": 55},
+        {"id": "room212", "label": "212", "description": "212教室: グリーンランド", "x": 569, "y": 232, "width": 57, "height": 55},
+        {"id": "room213", "label": "213", "description": "213教室: 美術室です。", "x": 665, "y": 238, "width": 80, "height": 153},
+        {"id": "room214", "label": "214", "description": "214教室: 講義室です。", "x": 665, "y": 393, "width": 80, "height": 170},
+        {"id": "room215", "label": "215", "description": "215教室: 休憩室です。", "x": 665, "y": 565, "width": 108, "height": 98},
+        {"id": "room216", "label": "216", "description": "216教室: セミナー室です。", "x": 569, "y": 350, "width": 57, "height": 123}
+      ]
+    },
+    "3F": {
+      "mapImage": "assets/map-3F.png",
+      "rooms": []
+    },
+    "4F": {
+      "mapImage": "assets/map-4F.png",
+      "rooms": [
+        {"id": "room401", "label": "401", "description": "401教室: コンピューターラボ", "x": 61, "y": 434, "width": 85, "height": 76},
+        {"id": "room402", "label": "402", "description": "402教室: 演習室", "x": 61, "y": 512, "width": 85, "height": 77},
+        {"id": "room403", "label": "403", "description": "403教室: 研究室 - 佐藤 健一 教授", "x": 175, "y": 434, "width": 57, "height": 60},
+        {"id": "room404", "label": "404", "description": "404教室: 研究室 - 山田 太郎 教授", "x": 234, "y": 425, "width": 39, "height": 69},
+        {"id": "room405", "label": "405", "description": "405教室: セミナールーム", "x": 275, "y": 400, "width": 39, "height": 60},
+        {"id": "room406", "label": "406", "description": "406教室: 情報科学実験室", "x": 316, "y": 378, "width": 38, "height": 60},
+        {"id": "room407", "label": "407", "description": "407教室: メディアラボ", "x": 356, "y": 359, "width": 38, "height": 60},
+        {"id": "room408", "label": "408", "description": "408教室: 学生プロジェクト室", "x": 396, "y": 335, "width": 38, "height": 60},
+        {"id": "room409", "label": "409", "description": "409教室: 大会議室", "x": 435, "y": 314, "width": 38, "height": 60},
+        {"id": "room410", "label": "410", "description": "410教室: 小会議室", "x": 558, "y": 275, "width": 40, "height": 53},
+        {"id": "room411", "label": "411", "description": "411教室: 創発スペース", "x": 558, "y": 347, "width": 52, "height": 80},
+        {"id": "room412", "label": "412", "description": "412教室: IoTラボ", "x": 558, "y": 429, "width": 52, "height": 76},
+        {"id": "room413", "label": "413", "description": "413教室: AIラーニングセンター", "x": 640, "y": 352, "width": 83, "height": 75},
+        {"id": "room414", "label": "414", "description": "414教室: デザインスタジオ", "x": 640, "y": 429, "width": 83, "height": 75},
+        {"id": "room415", "label": "415", "description": "415教室: リフレッシュスペース", "x": 618, "y": 583, "width": 122, "height": 82}
+      ]
+    },
+    "5F": {
+      "mapImage": "assets/map-5F.png",
+      "rooms": []
+    },
+    "6F": {
+      "mapImage": "assets/map-6F.png",
+      "rooms": []
+    }
+  }
+}
