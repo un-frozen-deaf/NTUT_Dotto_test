@@ -1,7 +1,7 @@
 {
   "floors": {
     "1F": {
-      "mapImage": "assets/map-1F.png",
+      "mapImage": "assets/1F.png",
       "rooms": [
         {"id": "room101", "label": "101", "description": "101教室: エントランスホール", "x": 61, "y": 591, "width": 85, "height": 76},
         {"id": "room102", "label": "102", "description": "102教室: 一般教室", "x": 61, "y": 512, "width": 85, "height": 77},
@@ -28,7 +28,7 @@
       ]
     },
     "2F": {
-      "mapImage": "assets/map-2F.png",
+      "mapImage": "assets/2F.png",
       "rooms": [
         {"id": "workshop", "label": "工房", "description": "工房: ものづくりの空間です。", "x": 18, "y": 105, "width": 283, "height": 96},
         {"id": "room201", "label": "201", "description": "room201: 会議室です。", "x": 17, "y": 533, "width": 94, "height": 99},
@@ -50,11 +50,11 @@
       ]
     },
     "3F": {
-      "mapImage": "assets/map-3F.png",
+      "mapImage": "assets/3F.png",
       "rooms": []
     },
     "4F": {
-      "mapImage": "assets/map-4F.png",
+      "mapImage": "assets/4F.png",
       "rooms": [
         {"id": "room401", "label": "401", "description": "401教室: コンピューターラボ", "x": 61, "y": 434, "width": 85, "height": 76},
         {"id": "room402", "label": "402", "description": "402教室: 演習室", "x": 61, "y": 512, "width": 85, "height": 77},
@@ -74,11 +74,11 @@
       ]
     },
     "5F": {
-      "mapImage": "assets/map-5F.png",
+      "mapImage": "assets/5F.png",
       "rooms": []
     },
     "6F": {
-      "mapImage": "assets/map-6F.png",
+      "mapImage": "assets/6F.png",
       "rooms": []
     }
   }
