@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'building_data_loader.dart';
 
 class Room {
   final String id;  // 部屋ID
@@ -91,23 +92,21 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  String _currentFloor = '1F';  // 現在表示しているフロア
-  String _currentRoomDescription = '';  // 現在表示しているフロア
-  Offset? tapPosition;  // タップ位置（今後使える）
-  BuildingData? _buildingData;  // 読み込まれた校舎データ
-  bool _isLoading = true;  // ローディング中かどうか
-
-  String? _selectedRoomId;  // 選択されている部屋のID
+  String _currentFloor = '1F';
+  String _currentRoomDescription = '';
+  BuildingData? _buildingData;
+  bool _isLoading = true;
+  String? _selectedRoomId;
 
   @override
   void initState() {
     super.initState();
-    _loadBuildingData();  // 初期化時にデータ読み込み
+    _loadBuildingData();
   }
 
   Future<void> _loadBuildingData() async {
     try {
-      final data = await BuildingData.load();
+      final data = await loadBuildingData();  // ←ここで自動分岐
       setState(() {
         _buildingData = data;
         _isLoading = false;
@@ -122,33 +121,31 @@ class _MapScreenState extends State<MapScreen> {
 
   void _onRoomTapped(String roomId) {
     setState(() {
-      // 同じ部屋をタップした場合は選択を解除
       if (_selectedRoomId == roomId) {
         _selectedRoomId = null;
         _currentRoomDescription = '';
       } else {
         _selectedRoomId = roomId;
-
-        // 部屋の説明を設定
         if (_buildingData != null) {
           final floor = _buildingData!.floors[_currentFloor];
           if (floor != null) {
-            final room = floor.rooms.firstWhere((r) => r.id == roomId, orElse: () =>
-                Room(id: '', label: '', description: '説明がありません', x: 0, y: 0, width: 0, height: 0));
+            final room = floor.rooms.firstWhere(
+                  (r) => r.id == roomId,
+              orElse: () => Room(
+                id: '',
+                label: '',
+                description: '説明がありません',
+                x: 0,
+                y: 0,
+                width: 0,
+                height: 0,
+              ),
+            );
             _currentRoomDescription = room.description;
           }
         }
       }
     });
-  }
-
-  void _onImageTapped(TapDownDetails details) {
-    final RenderBox box = context.findRenderObject() as RenderBox;
-    final localPosition = box.globalToLocal(details.globalPosition);
-    setState(() {
-      tapPosition = localPosition;
-    });
-    debugPrint("Tapped at: ${localPosition.dx}, ${localPosition.dy}");
   }
 
   @override
@@ -166,7 +163,6 @@ class _MapScreenState extends State<MapScreen> {
               if (value != null) {
                 setState(() {
                   _currentFloor = value;
-                  tapPosition = null;
                   _currentRoomDescription = '';
                   _selectedRoomId = null;
                 });
@@ -187,71 +183,55 @@ class _MapScreenState extends State<MapScreen> {
           ? const Center(child: CircularProgressIndicator())
           : _buildingData == null
           ? const Center(child: Text('データの読み込みに失敗しました'))
-          : GestureDetector(
-        onTapDown: _onImageTapped,
-        child: InteractiveViewer(
-          panEnabled: true,
-          scaleEnabled: true,
-          minScale: 0.5,
-          maxScale: 4.0,
-          constrained: false,
-          child: Stack(
-            children: [
-              // マップ画像
-              Image.asset(
-                _getMapAssetPath(),
-                width: screenSize.width,
-                fit: BoxFit.contain,
-              ),
-
-              // 部屋
-              ..._buildRooms(screenSize),
-
-              // 説明文
-              if (_currentRoomDescription.isNotEmpty)
-                Positioned(
-                  left: 20,
-                  bottom: 20,
-                  child: Container(
-                    color: Colors.black.withOpacity(0.7),
-                    padding: const EdgeInsets.all(10),
-                    child: Text(
-                      _currentRoomDescription,
-                      style: const TextStyle(color: Colors.white, fontSize: 16),
+          : InteractiveViewer(
+        panEnabled: true,
+        scaleEnabled: true,
+        minScale: 0.5,
+        maxScale: 4.0,
+        constrained: false,
+        child: Stack(
+          children: [
+            Image.asset(
+              _getMapAssetPath(),
+              width: screenSize.width,
+              fit: BoxFit.contain,
+            ),
+            ..._buildRooms(screenSize),
+            if (_currentRoomDescription.isNotEmpty)
+              Positioned(
+                left: 20,
+                bottom: 20,
+                child: Container(
+                  color: Colors.black.withOpacity(0.7),
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                    _currentRoomDescription,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
                     ),
                   ),
                 ),
-            ],
-          ),
+              ),
+          ],
         ),
       ),
     );
   }
 
   String _getMapAssetPath() {
-    if (_buildingData == null) {
-      return 'assets/map-1F.png';
-    }
-
+    if (_buildingData == null) return 'assets/1F.png';
     final floor = _buildingData!.floors[_currentFloor];
-    if (floor == null) {
-      return 'assets/map-1F.png';
-    }
-
-    return floor.mapImage;
+    return floor?.mapImage ?? 'assets/1F.png';
   }
 
   List<Widget> _buildRooms(Size screenSize) {
-    if (_buildingData == null) {
-      return [];
-    }
+    if (_buildingData == null) return [];
 
     final floor = _buildingData!.floors[_currentFloor];
-    if (floor == null) {
-      return [];
-    }
+    if (floor == null) return [];
 
-    final scale = screenSize.width / 792; // 画像の元サイズに対する比率
+    final scale = screenSize.width / 792;
 
     return floor.rooms.map((room) {
       return Positioned(
