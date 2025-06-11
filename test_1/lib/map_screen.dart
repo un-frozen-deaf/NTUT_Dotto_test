@@ -92,7 +92,7 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  String _currentFloor = '1F';
+  String _currentFloor = '2F';
   String _currentRoomDescription = '';
   BuildingData? _buildingData;
   bool _isLoading = true;
