@@ -6,18 +6,13 @@ import 'building_data_loader.dart';
 class Room {
   final String id;  // 部屋ID
   final String label;  // 部屋ラベル（表示用）
+  final String subLabel;  // 部屋サブラベル（表示用）
   final String description;  // 部屋の説明
   final double x,y;  // マップ上の座標（左上基準）
   final double width,height;  // 部屋の幅と高さ
 
   Room({
-    required this.id,
-    required this.label,
-    required this.description,
-    required this.x,
-    required this.y,
-    required this.width,
-    required this.height,
+    required this.id, required this.label, required this.subLabel, required this.description, required this.x, required this.y, required this.width, required this.height,
   });
 
   // JSONからRoomオブジェクトを作成するファクトリ
@@ -25,6 +20,7 @@ class Room {
     return Room(
       id: json['id'],
       label: json['label'],
+      subLabel: json['subLabel'] ?? '',
       description: json['description'],
       x: json['x'].toDouble(),
       y: json['y'].toDouble(),
@@ -92,7 +88,7 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  String _currentFloor = '2F';
+  String _currentFloor = '6F';  // 最初に表示するフロア
   String _currentRoomDescription = '';
   BuildingData? _buildingData;
   bool _isLoading = true;
@@ -106,7 +102,7 @@ class _MapScreenState extends State<MapScreen> {
 
   Future<void> _loadBuildingData() async {
     try {
-      final data = await loadBuildingData();  // ←ここで自動分岐
+      final data = await loadBuildingData();
       setState(() {
         _buildingData = data;
         _isLoading = false;
@@ -131,15 +127,17 @@ class _MapScreenState extends State<MapScreen> {
           if (floor != null) {
             final room = floor.rooms.firstWhere(
                   (r) => r.id == roomId,
-              orElse: () => Room(
-                id: '',
-                label: '',
-                description: '説明がありません',
-                x: 0,
-                y: 0,
-                width: 0,
-                height: 0,
-              ),
+              orElse: () =>
+                  Room(
+                    id: '',
+                    label: '',
+                    subLabel: '',
+                    description: '説明がありません',
+                    x: 0,
+                    y: 0,
+                    width: 0,
+                    height: 0,
+                  ),
             );
             _currentRoomDescription = room.description;
           }
@@ -150,7 +148,9 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
+    final screenSize = MediaQuery
+        .of(context)
+        .size;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -246,11 +246,30 @@ class _MapScreenState extends State<MapScreen> {
                 ? Colors.red.withOpacity(0.6)
                 : Colors.grey.withOpacity(0.6),
             child: Center(
-              child: Text(
-                room.label,
-                style: TextStyle(fontSize: 12 * scale),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    room.label,
+                    style: TextStyle(
+                      fontSize: 12 * scale,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  if (room.subLabel.isNotEmpty)
+                    Text(
+                      room.subLabel,
+                      style: TextStyle(
+                        fontSize: 10 * scale,
+                        fontWeight: FontWeight.normal,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                ],
               ),
             ),
+
           ),
         ),
       );
