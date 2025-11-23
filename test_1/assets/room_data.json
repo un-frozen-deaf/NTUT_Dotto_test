@@ -1,0 +1,155 @@
+{
+  "floors": {
+    "1F": {
+      "mapImage": "assets/1F.png",
+      "rooms": [
+        {"id": "room101", "label": "101", "subLable":"構造・材料実験室", "description": "101教室: 構造・材料実験室", "x": 69, "y": 536, "width": 85, "height": 76},
+        {"id": "room102", "label": "102", "subLable":"", "description": "102教室: 構造研究分析室", "x": 69, "y": 457, "width": 85, "height": 77},
+        {"id": "room103", "label": "103", "subLable":"","description": "103教室: 生産工学実験室", "x": 69, "y": 379, "width": 85, "height": 76},
+        {"id": "room104", "label": "104", "subLable":"","description": "104教室: 資料室", "x": 250, "y": 455, "width": 62, "height": 122},
+        {"id": "room104", "label": "104", "subLable":"","description": "104教室: 標本室", "x": 233, "y": 577, "width": 79, "height": 40},
+        {"id": "room105", "label": "105", "subLable":"","description": "105教室: 伊藤 美千代 教授", "x": 179, "y": 379, "width": 53, "height": 60},
+        {"id": "room106", "label": "106", "subLable":"","description": "106教室: ", "x": 234, "y": 370, "width": 36, "height": 69},
+        {"id": "room107", "label": "107", "subLable":"","description": "107教室: 鈴木 拓弥 教授", "x": 272, "y": 353, "width": 39, "height": 60},
+        {"id": "room108", "label": "108", "subLable":"","description": "108教室: ", "x": 313, "y": 329, "width": 38, "height": 60},
+        {"id": "room109", "label": "109", "subLable":"","description": "109教室: 井上 征矢 教授", "x": 353, "y": 310, "width": 35, "height": 60},
+        {"id": "room110", "label": "110", "subLable":"","description": "110教室: 郭龍旻 教授", "x": 390, "y": 287, "width": 37, "height": 60},
+        {"id": "room111", "label": "111", "subLable":"","description": "111教室: 守屋 星太郎 教授", "x": 429, "y": 267, "width": 29, "height": 60},
+        {"id": "room112", "label": "112", "subLable":"","description": "112教室: 劉建国 教授", "x": 547, "y": 222, "width": 40, "height": 53},
+        {"id": "room113", "label": "113", "subLable":"","description": "113教室: 講義室", "x": 642, "y": 222, "width": 83, "height": 77},
+        {"id": "room114", "label": "114", "subLable":"","description": "114教室: 製品デザイン実習室1", "x": 642, "y": 301, "width": 83, "height": 77},
+        {"id": "room115", "label": "115", "subLable":"","description": "115教室: 視覚伝達デザイン実習室", "x": 642, "y": 380, "width": 83, "height": 77},
+        {"id": "room116", "label": "116", "subLable":"","description": "116教室: 横井 聖宏 教授", "x": 642, "y": 459, "width": 83, "height": 82},
+        {"id": "room117", "label": "117", "subLable":"","description": "117教室: CG実習室", "x": 608, "y": 543, "width": 131, "height": 75},
+        {"id": "room118", "label": "118", "subLable":"","description": "118教室: 映像実験室", "x": 476, "y": 543, "width": 130, "height": 75},
+        {"id": "room119", "label": "119", "subLable":"","description": "119教室: 田嶋美雪", "x": 547, "y": 374, "width": 50, "height": 76},
+        {"id": "room120", "label": "120", "subLable":"","description": "120教室: デザイン準備室", "x": 547, "y": 292, "width": 50, "height": 80},
+        {"id": "room121", "label": "121", "subLable":"","description": "121教室: ", "x": 69, "y": 124, "width": 242, "height": 94},
+        {"id": "room121", "label": "121", "subLable":"","description": "121教室: ", "x": 69, "y": 58, "width": 79, "height": 66},
+        {"id": "room122", "label": "122", "subLable":"","description": "122教室: 計測室", "x": 150, "y": 73, "width": 61, "height": 49}
+      ]
+
+    },
+    "2F": {
+      "mapImage": "assets/2F.png",
+      "rooms": [
+        {"id": "workshop", "label": "工房","subLable":"", "description": "工房: ものづくりの空間です。", "x": 69, "y": 123, "width": 242, "height": 96},
+        {"id": "workshop", "label": "工房","subLable":"", "description": "工房: ものづくりの空間です。", "x": 69, "y": 57, "width": 150, "height": 66},
+        {"id": "room201", "label": "201","subLable":"", "description": "room201: 会議室です。", "x": 69, "y": 523, "width": 85, "height": 55},
+        {"id": "room202", "label": "202","subLable":"", "description": "room202: 学習室です。", "x": 69, "y": 379, "width": 85, "height": 140},
+        {"id": "room203", "label": "203", "subLable":"","description": "room203: 休憩室です。", "x": 179, "y": 379, "width": 51, "height": 55},
+        {"id": "room204", "label": "204","subLable":"", "description": "204教室: 小林 洋子 教授", "x": 232, "y": 379, "width": 39, "height": 55},
+        {"id": "room205", "label": "205","subLable":"", "description": "205教室: 新井 達也 教授", "x": 273, "y": 379, "width": 39, "height": 55},
+        {"id": "room206", "label": "206","subLable":"", "description": "206教室: 新田 伸也 教授", "x": 314, "y": 357, "width": 39, "height": 55},
+        {"id": "room207", "label": "207","subLable":"", "description": "207教室: 田中 晃 教授", "x": 355, "y": 332, "width": 39, "height": 55},
+        {"id": "room208", "label": "208", "subLable":"","description": "208教室: 中島 幸則 教授", "x": 396, "y": 307, "width": 39, "height": 55},
+        {"id": "room209", "label": "209", "subLable":"","description": "209教室: 神村 幸蔵 教授", "x": 437, "y": 282, "width": 39, "height": 55},
+        {"id": "room210", "label": "210","subLable":"", "description": "210教室: 脇中 起余子 教授", "x": 478, "y": 257, "width": 39, "height": 55},
+        {"id": "room211", "label": "211","subLable":"", "description": "211教室: 大杉 豊 教授", "x": 519, "y": 232, "width": 39, "height": 55},
+        {"id": "room212", "label": "212","subLable":"", "description": "212教室: グリーンランド", "x": 560, "y": 232, "width": 40, "height": 55},
+        {"id": "room213", "label": "213","subLable":"", "description": "213教室: 美術室です。", "x": 625, "y": 249, "width": 80, "height": 135},
+        {"id": "room214", "label": "214","subLable":"", "description": "214教室: 講義室です。", "x": 625, "y": 387, "width": 80, "height": 143},
+        {"id": "room215", "label": "215","subLable":"", "description": "215教室: 休憩室です。", "x": 625, "y": 533, "width": 100, "height": 85},
+        {"id": "room216", "label": "216", "subLable":"","description": "216教室: セミナー室です。", "x": 545, "y": 384, "width": 52, "height": 67}
+      ]
+    },
+    "3F": {
+      "mapImage": "assets/3F.png",
+      "rooms": [
+        {"id": "room303", "label": "303","subLable":"", "description": "303教室: 会議室です。", "x": 69, "y": 501, "width": 83, "height": 75},
+        {"id": "room304", "label": "304", "subLable":"","description": "304教室: 学習室です。", "x": 69, "y": 379, "width": 83, "height": 120},
+        {"id": "room305", "label": "305","subLable":"", "description": "305教室: 休憩室です。", "x": 155, "y": 379, "width": 75, "height": 55},
+        {"id": "room306", "label": "306","subLable":"", "description": "306教室: 小林 洋子 教授", "x": 232, "y": 379, "width": 38, "height": 55},
+        {"id": "room307", "label": "307", "subLable":"","description": "307教室: 新井 達也 教授", "x": 272, "y": 379, "width": 38, "height": 55},
+        {"id": "room308", "label": "308","subLable":"", "description": "308教室: 新田 伸也 教授", "x": 312, "y": 379, "width": 38, "height": 55},
+        {"id": "room309", "label": "309","subLable":"", "description": "309教室: 田中 晃 教授", "x": 352, "y": 354, "width": 38, "height": 55},
+        {"id": "room310", "label": "310", "subLable":"","description": "310教室: 中島 幸則 教授", "x": 392, "y": 329, "width": 38, "height": 55},
+        {"id": "room311", "label": "311", "subLable":"","description": "311教室: 神村 幸蔵 教授", "x": 432, "y": 304, "width": 38, "height": 55},
+        {"id": "room312", "label": "312", "subLable":"","description": "312教室: 脇中 起余子 教授", "x": 472, "y": 279, "width": 38, "height": 55},
+        {"id": "room313", "label": "313", "subLable":"","description": "313教室: 大杉 豊 教授", "x": 512, "y": 254, "width": 38, "height": 80},
+        {"id": "ラウンジ", "label": "ラウンジ","subLable":"", "description": "ラウンジ", "x": 552, "y": 254, "width": 49, "height": 80},
+        {"id": "room314", "label": "314", "subLable":"","description": "314教室: 美術室です。", "x": 625, "y": 249, "width": 80, "height": 130},
+        {"id": "room315", "label": "315","subLable":"", "description": "315教室: 講義室です。", "x": 625, "y": 381, "width": 80, "height": 69},
+        {"id": "room316", "label": "316","subLable":"", "description": "316教室: 講義室です。", "x": 625, "y": 452, "width": 80, "height": 78},
+        {"id": "room316", "label": "316", "subLable":"","description": "316教室: 休憩室です。", "x": 625, "y": 530, "width": 100, "height": 88},
+        {"id": "room317", "label": "317", "subLable":"","description": "317教室: セミナー室です。", "x": 547, "y": 381, "width": 50, "height": 69},
+        {"id": "room318", "label": "318", "subLable":"","description": "318教室: セミナー室です。", "x": 467, "y": 530, "width": 130, "height": 46},
+        {"id": "room318", "label": "318", "subLable":"","description": "318教室: セミナー室です。", "x": 467, "y": 576, "width": 78, "height": 42},
+        {"id": "room319", "label": "319", "subLable":"","description": "319教室: セミナー室です。", "x": 547, "y": 578, "width": 50, "height": 40}
+      ]
+    },
+    "4F": {
+      "mapImage": "assets/4F.png",
+      "rooms": [
+        {"id": "room409", "label": "409","subLable":"", "description": "409教室: 演習室", "x": 69, "y": 539, "width": 85, "height": 77},
+        {"id": "room410", "label": "410","subLable":"", "description": "410教室: コンピューターラボ", "x": 69, "y": 458, "width": 85, "height": 79},
+        {"id": "room411", "label": "411","subLable":"", "description": "411教室: コンピューターラボ", "x": 69, "y": 379, "width": 85, "height": 77},
+        {"id": "room412", "label": "412", "subLable":"","description": "412教室: 研究室 - 佐藤 健一 教授", "x": 156, "y": 379, "width": 33, "height": 50},
+        {"id": "room413", "label": "413", "subLable":"","description": "413教室: 研究室 - 佐藤 健一 教授", "x": 191, "y": 379, "width": 33, "height": 50},
+        {"id": "room414", "label": "414", "subLable":"","description": "414教室: 研究室 - 佐藤 健一 教授", "x": 226, "y": 379, "width": 33, "height": 50},
+        {"id": "room415", "label": "415","subLable":"", "description": "415教室: 研究室 - 佐藤 健一 教授", "x": 261, "y": 379, "width": 33, "height": 50},
+        {"id": "room416", "label": "416","subLable":"", "description": "416教室: 研究室 - 佐藤 健一 教授", "x": 296, "y": 379, "width": 33, "height": 50},
+        {"id": "room417", "label": "417", "subLable":"","description": "417教室: 研究室 - 佐藤 健一 教授", "x": 331, "y": 379, "width": 33, "height": 50},
+        {"id": "room418", "label": "418", "subLable":"","description": "418教室: 研究室 - 佐藤 健一 教授", "x": 366, "y": 379, "width": 33, "height": 50},
+        {"id": "room419", "label": "419", "subLable":"","description": "419教室: 研究室 - 佐藤 健一 教授", "x": 401, "y": 350, "width": 40, "height": 60},
+        {"id": "room420", "label": "420", "subLable":"","description": "420教室: 研究室 - 佐藤 健一 教授", "x": 443, "y": 321, "width": 40, "height": 60},
+        {"id": "room421", "label": "421", "subLable":"","description": "421教室: 研究室 - 佐藤 健一 教授", "x": 485, "y": 292, "width": 40, "height": 60},
+        {"id": "ラウンジ", "label": "ラウンジ","subLable":"", "description": "ラウンジ", "x": 527, "y": 292, "width": 70, "height": 60},
+        {"id": "room422", "label": "422", "subLable":"","description": "422教室: ", "x": 625, "y": 249, "width": 85, "height": 75},
+        {"id": "room423", "label": "423","subLable":"", "description": "423教室: ", "x": 625, "y": 326, "width": 85, "height": 120},
+        {"id": "room424", "label": "424", "subLable":"","description": "424教室: ", "x": 625, "y": 448, "width": 85, "height": 88},
+        {"id": "room425", "label": "425", "subLable":"","description": "425教室: ", "x": 625, "y": 538, "width": 100, "height": 80},
+        {"id": "room426", "label": "426", "subLable":"","description": "426教室: 創発スペース", "x": 547, "y": 382, "width": 50, "height": 68},
+        {"id": "room427", "label": "427", "subLable":"","description": "427教室: ", "x": 545, "y": 538, "width": 52, "height": 80},
+        {"id": "room428", "label": "428","subLable":"", "description": "428教室: ", "x": 465, "y": 538, "width": 78, "height": 80},
+        {"id": "room429", "label": "429","subLable":"", "description": "429教室: ", "x": 465, "y": 620, "width": 78, "height": 80}
+      ]
+    },
+    "5F": {
+      "mapImage": "assets/5F.png",
+      "rooms": [
+        {"id": "room507", "label": "507","subLable":"", "description": "507教室: 演習室", "x": 69, "y": 539, "width": 85, "height": 77},
+        {"id": "room508", "label": "508", "subLable":"","description": "508教室: コンピューターラボ", "x": 69, "y": 458, "width": 85, "height": 79},
+        {"id": "room509", "label": "509","subLable":"", "description": "509教室: コンピューターラボ", "x": 69, "y": 379, "width": 85, "height": 77},
+        {"id": "room510", "label": "510","subLable":"", "description": "510教室: 研究室 - 佐藤 健一 教授", "x": 156, "y": 379, "width": 75, "height": 50},
+        {"id": "room511", "label": "511", "subLable":"","description": "511教室: 研究室 - 佐藤 健一 教授", "x": 233, "y": 379, "width": 37, "height": 50},
+        {"id": "room512", "label": "512","subLable":"", "description": "512教室: 研究室 - 佐藤 健一 教授", "x": 272, "y": 379, "width": 37, "height": 50},
+        {"id": "room513", "label": "513", "subLable":"","description": "513教室: 研究室 - 佐藤 健一 教授", "x": 311, "y": 379, "width": 37, "height": 50},
+        {"id": "room514", "label": "514", "subLable":"","description": "514教室: 研究室 - 佐藤 健一 教授", "x": 350, "y": 379, "width": 37, "height": 50},
+        {"id": "room515", "label": "515", "subLable":"","description": "515教室: 研究室 - 佐藤 健一 教授", "x": 389, "y": 379, "width": 37, "height": 50},
+        {"id": "room516", "label": "516", "subLable":"","description": "517教室: 研究室 - 佐藤 健一 教授", "x": 428, "y": 379, "width": 37, "height": 50},
+        {"id": "room517", "label": "517", "subLable":"","description": "517教室: 研究室 - 佐藤 健一 教授", "x": 467, "y": 359, "width": 37, "height": 70},
+        {"id": "room518", "label": "518", "subLable":"","description": "518教室: 研究室 - 佐藤 健一 教授", "x": 506, "y": 339, "width": 37, "height": 90},
+        {"id": "room519", "label": "519", "subLable":"","description": "519教室: ", "x": 625, "y": 324, "width": 85, "height": 40},
+        {"id": "room520", "label": "520","subLable":"", "description": "520教室: ", "x": 625, "y": 366, "width": 85, "height": 80},
+        {"id": "room521", "label": "521", "subLable":"","description": "521教室: ", "x": 625, "y": 448, "width": 85, "height": 88},
+        {"id": "room522", "label": "522", "subLable":"","description": "522教室: ", "x": 625, "y": 538, "width": 100, "height": 80},
+        {"id": "ラウンジ", "label": "ラウンジ", "subLable":"","description": "ラウンジ", "x": 545, "y": 339, "width": 50, "height": 90},
+        {"id": "room523", "label": "523", "subLable":"","description": "523教室: ", "x": 545, "y": 538, "width": 52, "height": 80}
+      ]
+    },
+    "6F": {
+      "mapImage": "assets/6F.png",
+      "rooms": [
+        {"id": "room601", "label": "601","subLable":"", "description": "601教室: 演習室", "x": 156, "y": 573, "width": 24, "height": 43},
+        {"id": "room602", "label": "602", "subLable":"","description": "602教室: 演習室", "x": 69, "y": 539, "width": 85, "height": 77},
+        {"id": "room603", "label": "603","subLable":"", "description": "603教室: コンピューターラボ", "x": 69, "y": 458, "width": 85, "height": 79},
+        {"id": "room604", "label": "604","subLable":"", "description": "604教室: コンピューターラボ", "x": 69, "y": 379, "width": 85, "height": 77},
+        {"id": "room605", "label": "605","subLable":"", "description": "605教室: 研究室 - 佐藤 健一 教授", "x": 156, "y": 379, "width": 75, "height": 50},
+        {"id": "room606", "label": "606", "subLable":"","description": "606教室: 研究室 - 佐藤 健一 教授", "x": 233, "y": 379, "width": 37, "height": 50},
+        {"id": "room607", "label": "607","subLable":"", "description": "607教室: 研究室 - 佐藤 健一 教授", "x": 272, "y": 379, "width": 37, "height": 50},
+        {"id": "room608", "label": "608","subLable":"", "description": "608教室: 研究室 - 佐藤 健一 教授", "x": 311, "y": 379, "width": 37, "height": 50},
+        {"id": "room609", "label": "609", "subLable":"","description": "609教室: 研究室 - 佐藤 健一 教授", "x": 350, "y": 379, "width": 37, "height": 50},
+        {"id": "room610", "label": "610", "subLable":"","description": "610教室: 研究室 - 佐藤 健一 教授", "x": 389, "y": 379, "width": 37, "height": 50},
+        {"id": "room611", "label": "611","subLable":"", "description": "611教室: 研究室 - 佐藤 健一 教授", "x": 428, "y": 379, "width": 37, "height": 50},
+        {"id": "room612", "label": "612","subLable":"", "description": "612教室: 研究室 - 佐藤 健一 教授", "x": 467, "y": 379, "width": 37, "height": 50},
+        {"id": "room613", "label": "613", "subLable":"","description": "613教室: 研究室 - 佐藤 健一 教授", "x": 506, "y": 379, "width": 37, "height": 50},
+        {"id": "room520", "label": "614", "subLable":"","description": "614教室: ", "x": 625, "y": 366, "width": 85, "height": 80},
+        {"id": "room521", "label": "615", "subLable":"","description": "615教室: ", "x": 625, "y": 448, "width": 85, "height": 88},
+        {"id": "room522", "label": "616", "subLable":"","description": "616教室: ", "x": 625, "y": 538, "width": 100, "height": 80},
+        {"id": "ラウンジ", "label": "ラウンジ", "description": "ラウンジ", "x": 545, "y": 379, "width": 50, "height": 50},
+        {"id": "room523", "label": "617","subLable":"", "description": "617教室: ", "x": 467, "y": 538, "width": 130, "height": 80}
+      ]
+    }
+  }
+}

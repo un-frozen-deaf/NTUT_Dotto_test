@@ -58,9 +58,13 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-    - assets/map-1F.png
-    - assets/map-2F.png
-    - assets/map-2F-1.png
+    - assets/1F.png
+    - assets/2F.png
+    - assets/3F.png
+    - assets/4F.png
+    - assets/5F.png
+    - assets/6F.png
+    - assets/room_data.json
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
